@@ -12,7 +12,6 @@ export const HomePage = () => {
   return (
     <div className={s.root}>
       <span>{count}</span>
-
       <div>
         <button
           onClick={() => dispatch(rootActions.counter.increment())}

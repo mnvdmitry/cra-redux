@@ -1,0 +1,80 @@
+.root {
+  --size: var(--unit-x9);
+  --width: 5px;
+  --color: var(--base-accent);
+
+  position: relative;
+  display: block;
+  width: var(--size);
+  height: var(--size);
+  animation: loader 2.2s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(540deg);
+  }
+
+  100% {
+    transform: rotate(1080deg);
+  }
+}
+
+.inner::after,
+.inner::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: '';
+  border: var(--width) solid var(--color);
+  border-radius: 50%;
+}
+
+.inner::before {
+  opacity: 0.3;
+}
+
+/* @noflip */
+.inner::after {
+  border: var(--width) solid transparent;
+  border-top-color: var(--color);
+  border-right-color: var(--color);
+  transform: rotate(-45deg);
+}
+
+.root::before,
+.root::after {
+  position: absolute;
+  z-index: 2;
+  width: var(--size);
+  height: var(--size);
+  content: '';
+  border-radius: 50%;
+}
+
+.root::before {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.root::after {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.root.--color-inherit {
+  --color: currentColor;
+}
+
+.root.--size-small {
+  --size: var(--unit-x6);
+  --width: 3px;
+}
