@@ -2,22 +2,106 @@
   "name": "cra-redux-template",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test:lint": "eslint src/**/*.js"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app"
+    ],
+    "plugins": [
+      "import"
+    ],
+    "rules": {
+      "comma-dangle": [
+        "error",
+        "never"
+      ],
+      "object-curly-newline": [
+        "error",
+        {
+          "multiline": true,
+          "consistent": true
+        }
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "no-var": "error",
+      "prefer-const": "off",
+      "max-len": [
+        "error",
+        80
+      ],
+      "template-curly-spacing": [
+        "error",
+        "never"
+      ],
+      "prefer-arrow-callback": "error",
+      "no-dupe-class-members": "error",
+      "no-this-before-super": "error",
+      "prefer-rest-params": "error",
+      "constructor-super": "error",
+      "object-shorthand": "error",
+      "require-yield": "error",
+      "arrow-spacing": "error",
+      "arrow-parens": [
+        2,
+        "always"
+      ],
+      "import/first": 2,
+      "import/no-duplicates": 2,
+      "import/newline-after-import": 1,
+      "import/no-named-default": 2,
+      "import/order": [
+        "error",
+        {
+          "groups": [
+            [
+              "builtin",
+              "external"
+            ],
+            "internal",
+            [
+              "index",
+              "sibling",
+              "parent"
+            ]
+          ],
+          "pathGroups": [
+            {
+              "pattern": "components/**/*",
+              "group": "internal"
+            },
+            {
+              "pattern": "lib/**/*",
+              "group": "internal"
+            },
+            {
+              "pattern": "pages",
+              "group": "internal"
+            },
+            {
+              "pattern": "store",
+              "group": "internal"
+            },
+            {
+              "pattern": "styles/**/*",
+              "group": "internal"
+            }
+          ],
+          "pathGroupsExcludedImportTypes": [
+            "builtin"
+          ],
+          "newlines-between": "always"
+        }
+      ]
+    }
   },
   "browserslist": {
     "production": [
@@ -30,5 +114,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.3"
+  },
+  "devDependencies": {
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4"
   }
 }
