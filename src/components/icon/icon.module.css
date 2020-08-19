@@ -1,0 +1,29 @@
+.root {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.root svg {
+  display: block;
+  height: 100%;
+}
+
+.root.--size-smaller {
+  width: var(--unit-x5);
+  height: var(--unit-x5);
+}
+
+.root.--size-small {
+  width: var(--unit-x6);
+  height: var(--unit-x6);
+}
+
+.root.--size-medium {
+  width: var(--unit-x7);
+  height: var(--unit-x7);
+}
+
+.root.--size-large {
+  width: var(--unit-x8);
+  height: var(--unit-x8);
+}
