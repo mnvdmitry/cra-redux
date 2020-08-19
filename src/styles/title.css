@@ -1,0 +1,25 @@
+html {
+  --base-h1: var(--unit-x6);
+  --base-h2: var(--unit-x5);
+  --base-h3: var(--unit-x4);
+}
+
+@media (max-width: 940px) {
+  html {
+    --base-h1: var(--unit-x5);
+    --base-h2: var(--unit-x4);
+    --base-h3: var(--unit-x3);
+  }
+}
+
+h1 {
+  font-size: var(--base-h1);
+}
+
+h2 {
+  font-size: var(--base-h2);
+}
+
+h3 {
+  font-size: var(--base-h3);
+}
