@@ -4,3 +4,4 @@ export {
   setLocationSearchParam,
   useLocationSearchParam
 } from './search-param';
+export { getLocationHash, setLocationHash } from './hash';
